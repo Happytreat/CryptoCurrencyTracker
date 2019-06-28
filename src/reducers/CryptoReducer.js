@@ -5,10 +5,10 @@ import {
 } from './../utils/ActionTypes';
 
 const initialState = {
-  isFetching: false,
-  data: null,
+  isFetching: null,
+  data: [],
   hasError: false,
-  errorMessage: null
+  errorMessage: null,
 };
 
 export default function(state = initialState, action) {
@@ -18,10 +18,10 @@ export default function(state = initialState, action) {
     case FETCHING_COIN_DATA:
       return {
         ...state,
-          isFetching: true,
-          data: null,
-          hasError: false,
-          errorMessage: null
+        isFetching: true,
+        data: null,
+        hasError: false,
+        errorMessage: null
       };
 
     case FETCHING_COIN_DATA_SUCCESS:
@@ -37,9 +37,9 @@ export default function(state = initialState, action) {
       return {
         ...state,
         isFetching: false,
-        data: null,
+        data: action.payload,
         hasError: true,
-        errorMessage: action.payload
+        errorMessage: action.err
       };
 
 

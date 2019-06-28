@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <View style={headerContainer}>
       <Text style={header}>
-        Cryptocurrency Tracker
+        Cryptocurrency Price Tracker
       </Text>
     </View>
   )
