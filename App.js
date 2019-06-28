@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Header } from './src/components';
+import { Provider } from 'react-redux';
 
-export default function App() {
-  return (
-    <View>
-      <Header />
-    </View>
-  );
+import Store from './src/Store';
+import { Header } from './src/components';
+import { CryptoContainer } from './src/containers';
+
+export default class App extends Component {
+  render() {
+    return (
+      <Provider store={Store}>
+        <View>
+          <Header />
+          <CryptoContainer />
+        </View>
+      </Provider>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
